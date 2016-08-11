@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="angularDatePicker">
 <head>
 	<title>Date Picker AngularJS</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+
+	<script src="lib/angular/angular.js"></script>
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+	<script src="app.js"></script>
 </head>
 <body>
-	<h1>Prueba date Picker con angular</h1>
-	<datepicker ng-model
+	<div data-ng-controller="CtrlDatePicker">
+		<h1>Prueba date Picker con angular</h1>
+		<div class="form-group">
+			<label for="fechaActual" class="col-sm-3 control-label">Date</label>
+			<div class="col-sm-9">
+				<h4>Inline</h4>
+			    <div style="display:inline-block; min-height:290px;">
+			      <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+			    </div>		
+			</div>
+			
+		</div>
+		<br>
+		<p ng-repeat="list in listaPrueba">{{list.nombre}}</p>
+			<input value="{{fechaActual}}"/>
+		
+	</div>
 
 
 </body>
